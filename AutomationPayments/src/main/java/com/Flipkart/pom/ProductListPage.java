@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductListPage {
 
-	@FindBy(xpath = "(//div[@class='wvIX4U'])[2]")
+	@FindBy(xpath = "(//div[@class='_1sdMkc LFEi7Z'])[7]")
 		private WebElement product;
 	
 	@FindBy(xpath = "//button[contains(text(),'✕')]")

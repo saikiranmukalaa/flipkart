@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.Flipkart.generic.BaseClass;
 import com.Flipkart.pom.HomePage;
 import com.Flipkart.pom.ProductListPage;
+import com.Flipkart.pom.ProductToPayment;
 
 
 public class testPay  extends BaseClass{
@@ -19,13 +20,13 @@ public void payment() throws InterruptedException {
 		
 		ProductListPage p = new ProductListPage(driver);
 		p.getProductListPage().click();
-		Thread.sleep(1000);
 		
+		Thread.sleep(1000);
 		// Switch to new tab (product page)
 				for (String handle : driver.getWindowHandles()) {
 					driver.switchTo().window(handle);
 				}
-				
+				Thread.sleep(1000);
 				p.setPopup();
 				
 			        //  Click "Add to Cart"
@@ -36,7 +37,7 @@ public void payment() throws InterruptedException {
 				} catch (Exception e) {
 					System.out.println("Add to Cart button not found (maybe product is out of stock).");
 				}
-				Thread.sleep(1000);
+				
 
 				// Click "Buy Now"
 				try {
@@ -50,19 +51,28 @@ public void payment() throws InterruptedException {
 				
 				p.setPopup();
 				
-				driver.findElement(By.xpath("(//button)[5]")).click();// place order button
-				driver.findElement(By.xpath("//input[@type='text']")).sendKeys("9019371699");//login
-				driver.findElement(By.xpath("(//div)[22]")).click();// clicking on contiue button
-
-			
-
+				ProductToPayment pro = new ProductToPayment(driver);
+				pro.getPlaceOrderBtn().click();
+				//driver.findElement(By.xpath("(//button)[5]")).click();// place order button
+				
+				pro.getLoginTxt().sendKeys("7075357078");
+				//driver.findElement(By.xpath("//input[@type='text']")).sendKeys("9019371699");//login
+				
+				pro.getConBtn().click();
+				//driver.findElement(By.xpath("(//div)[22]")).click();// clicking on contiue button
 				Thread.sleep(40000);// waiting for OTP
-				driver.findElement(By.xpath("//button")).click(); // loginbutton clicking
-				Thread.sleep(1000);
-				driver.findElement(By.xpath("//button[text()='Deliver Here']")).click();// for clicking on deliver button 
-				Thread.sleep(1000);		
-				driver.findElement(By.xpath("//button[text()='CONTINUE']")).click();// order summary contiune buttton
-				Thread.sleep(1000);
+				
+				pro.getLoginBtn().click();
+				//driver.findElement(By.xpath("//button")).click(); // loginbutton clicking
+				//Thread.sleep(1000);
+				
+				pro.getDeliverHereBtn().click();
+//				driver.findElement(By.xpath("//button[text()='Deliver Here']")).click();// for clicking on deliver button 
+//				Thread.sleep(1000);		
+				
+				pro.getContOrderBtn().click();
+//				driver.findElement(By.xpath("//button[text()='CONTINUE']")).click();// order summary contiune buttton
+//				Thread.sleep(1000);
 	
 				
 				try {
@@ -74,7 +84,6 @@ public void payment() throws InterruptedException {
 				
 				Actions a = new Actions(driver);
 				WebElement upi = driver.findElement(By.xpath("//div/span[text()='UPI']"));
-				
 				a.doubleClick(upi).perform();
 				
 				Thread.sleep(1000);
