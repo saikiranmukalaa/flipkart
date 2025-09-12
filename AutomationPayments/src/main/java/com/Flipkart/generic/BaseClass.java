@@ -1,5 +1,6 @@
 package com.Flipkart.generic;
 
+import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +17,7 @@ public class BaseClass {
 public static WebDriver driver;
 	
 	@BeforeTest
-	public void openBrowser() throws InterruptedException {
+	public void openBrowser() throws InterruptedException, IOException {
 		
 		 ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-blink-features=AutomationControlled");
@@ -25,7 +26,9 @@ public static WebDriver driver;
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			//  Open Flipkart
-			driver.get("https://www.flipkart.com/");
+			FileLibClass f = new FileLibClass();
+			String url = f.getPropertyData("url");
+			driver.get(url);
 	}	
 	
 	

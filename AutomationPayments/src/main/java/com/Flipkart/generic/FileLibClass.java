@@ -17,12 +17,14 @@ public class FileLibClass {
 		String data = p.getProperty(key);
 		return data;
 		}
+	
 		public String getExcelData(String sheetName,int row,int cell) throws EncryptedDocumentException, IOException {
 		FileInputStream fis=new FileInputStream("./data/testscript.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);	
 		String data = wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
 		return data;
 		}
+		
 		public void setExcelData(String sheetName,int row,int cell,String data) throws EncryptedDocumentException, IOException {
 			FileInputStream fis=new FileInputStream("./data/testscript.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
