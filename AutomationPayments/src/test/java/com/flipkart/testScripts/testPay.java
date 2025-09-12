@@ -38,7 +38,7 @@ public void payment() throws InterruptedException {
 				}
 				Thread.sleep(1000);
 
-				// 7. Click "Buy Now"
+				// Click "Buy Now"
 				try {
 					WebElement buyNowBtn = driver.findElement(By.xpath("//button[text()='Buy Now']"));
 					buyNowBtn.click();

@@ -26,9 +26,9 @@ public static WebDriver driver;
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			//  Open Flipkart
-			FileLibClass f = new FileLibClass();
-			String url = f.getPropertyData("url");
-			driver.get(url);
+//			FileLibClass f = new FileLibClass();
+//			String url = f.getPropertyData("url");
+			driver.get("https://www.flipkart.com");
 	}	
 	
 	

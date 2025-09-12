@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class FileLibClass {
 
 	public  String getPropertyData(String key) throws IOException {
-		FileInputStream fis=new FileInputStream("./data/commondata.property");
+		FileInputStream fis=new FileInputStream("./data/commanddata.property");
 		Properties p=new Properties();
 		p.load(fis);
 		String data = p.getProperty(key);
