@@ -1,4 +1,4 @@
-package com.Flipkart.gerenic;
+package com.Flipkart.generic;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.Flipkart.gerenic;
+package com.Flipkart.generic;
 
 import java.time.Duration;
 import org.openqa.selenium.By;

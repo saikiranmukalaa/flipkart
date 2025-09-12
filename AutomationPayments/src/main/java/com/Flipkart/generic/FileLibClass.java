@@ -1,4 +1,4 @@
-package com.Flipkart.gerenic;
+package com.Flipkart.generic;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
