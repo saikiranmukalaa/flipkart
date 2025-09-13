@@ -20,10 +20,14 @@ AutomationPayments/
 Prerequisites
 Before running the tests, ensure you have the following installed:
 - [Java JDK 8+](https://www.oracle.com/java/technologies/javase-downloads.html)  
-- [Git](https://github.com/saikiranmukalaa/flipkart)  
+- [Git](https://github.com)  
 - IDE (Eclipse)  
 
-
+Installation & Setup
+1. Clone the repository:
+   git clone https://github.com/saikiranmukala/flipkart.git
+   
+2.Install dependencies:
 Copy and Paste the dependencies in pom.xml file
 <dependencies>
 <dependency>
