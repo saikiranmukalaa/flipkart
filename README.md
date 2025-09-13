@@ -16,3 +16,51 @@ AutomationPayments/
 │── reports/ # Test reports
 │── pom.xml # Maven dependencies
 │── README.md # Project documentation
+
+Prerequisites
+Before running the tests, ensure you have the following installed:
+- [Java JDK 8+](https://www.oracle.com/java/technologies/javase-downloads.html)  
+- [Git](https://github.com/saikiranmukalaa/flipkart)  
+- IDE (Eclipse)  
+
+
+Copy and Paste the dependencies in pom.xml file
+<dependencies>
+<dependency>
+<groupId>org.seleniumhq.selenium</groupId>
+<artifactId>selenium-java</artifactId>
+<version>4.34.0</version>
+</dependency>
+
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.10.2</version>
+</dependency>
+
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi-ooxml</artifactId>
+<version>5.4.0</version>
+</dependency>
+</dependencies>
+
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.5.3</version>
+
+<configuration>
+<suiteXmlFiles>
+<suiteXmlFile>testng.xml</suiteXmlFile>
+</suiteXmlFiles>
+</configuration>
+
+</plugin>
+</plugins>
+</build>
+
+
+
